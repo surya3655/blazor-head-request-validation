@@ -1,0 +1,1 @@
+﻿docker run --name headvalidation-static-verified -d -p 5183:8080 -e RenderMode=StaticSsr headvalidation:verified

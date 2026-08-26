@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Content-Length: 1148
+Content-Type: image/png
+Date: Wed, 26 Aug 2026 10:08:01 GMT
+Server: Kestrel
+Accept-Ranges: bytes
+Cache-Control: max-age=3600, must-revalidate
+ETag: "4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+Last-Modified: Thu, 20 Aug 2026 08:53:48 GMT
+

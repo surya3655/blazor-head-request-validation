@@ -1,0 +1,4 @@
+GET-status=200
+GET-X-Test=<absent>
+HEAD-status=200
+HEAD-X-Test=<absent>

@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: text/html; charset=utf-8
+Date: Wed, 26 Aug 2026 10:07:58 GMT
+Server: Kestrel
+Cache-Control: no-cache, no-store, max-age=0
+Content-Encoding: identity
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/" />
+    
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.46ein0sx1k.css" />
+    <link rel="stylesheet" href="app.8drynd3qwf.css" />
+    <link rel="stylesheet" href="HeadValidation.jr6g0e5yqn.styles.css" />
+    <script type="importmap">{
+  "imports": {
+    "./Components/Layout/NavMenu.razor.js": "./Components/Layout/NavMenu.4213728dye.razor.js",
+    "./Components/Layout/ReconnectModal.razor.js": "./Components/Layout/ReconnectModal.abdmv1u4y3.razor.js",
+    "./_framework/blazor.server.js": "./_framework/blazor.server.02y5zgxqby.js",
+    "./_framework/blazor.web.js": "./_framework/blazor.web.dno4xfe4w5.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.js": "./lib/bootstrap/dist/js/bootstrap.bundle.6cfz1n2cew.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.js": "./lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.js": "./lib/bootstrap/dist/js/bootstrap.esm.min.jj8uyg4cgr.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.js": "./lib/bootstrap/dist/js/bootstrap.esm.vr1egmr9el.js",
+    "./lib/bootstrap/dist/js/bootstrap.min.js": "./lib/bootstrap/dist/js/bootstrap.min.63fj8s7r0e.js",
+    "./lib/bootstrap/dist/js/bootstrap.js": "./lib/bootstrap/dist/js/bootstrap.notf2xhcfb.js"
+  },
+  "integrity": {
+    "./Components/Layout/NavMenu.4213728dye.razor.js": "sha256-5GiJeHYrFtel16qZHNoSV1fwiQoSX0rVQV5k2Vc3trQ=",
+    "./Components/Layout/NavMenu.razor.js": "sha256-5GiJeHYrFtel16qZHNoSV1fwiQoSX0rVQV5k2Vc3trQ=",
+    "./Components/Layout/ReconnectModal.abdmv1u4y3.razor.js": "sha256-5u+v90fOttEFzE2qHMGMOXmy93Ik/BaGqLrrnu6mdGU=",
+    "./Components/Layout/ReconnectModal.razor.js": "sha256-5u+v90fOttEFzE2qHMGMOXmy93Ik/BaGqLrrnu6mdGU=",
+    "./_framework/blazor.server.02y5zgxqby.js": "sha256-qA7WUAo/bg1v0JUwprn6osPzTqZm6eA7FsnWAFoVnyk=",
+    "./_framework/blazor.server.js": "sha256-qA7WUAo/bg1v0JUwprn6osPzTqZm6eA7FsnWAFoVnyk=",
+    "./_framework/blazor.web.dno4xfe4w5.js": "sha256-N20/4EWTCPe2DAMoZpUhCZponfG1Ud6PrvVNYMfGYxY=",
+    "./_framework/blazor.web.js": "sha256-N20/4EWTCPe2DAMoZpUhCZponfG1Ud6PrvVNYMfGYxY=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.6cfz1n2cew.js": "sha256-mkoRoV24jV+rCPWcHDR5awPx8VuzzJKN0ibhxZ9/WaM=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.js": "sha256-mkoRoV24jV+rCPWcHDR5awPx8VuzzJKN0ibhxZ9/WaM=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js": "sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.js": "sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.js": "sha256-exiXZNJDwucXfuje3CbXPbuS6+Ery3z9sP+pgmvh8nA=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.jj8uyg4cgr.js": "sha256-QZdFT1ZNdly4rmgUBtXmXFS9BU1FTa+sPe6h794sFRQ=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.js": "sha256-QZdFT1ZNdly4rmgUBtXmXFS9BU1FTa+sPe6h794sFRQ=",
+    "./lib/bootstrap/dist/js/bootstrap.esm.vr1egmr9el.js": "sha256-exiXZNJDwucXfuje3CbXPbuS6+Ery3z9sP+pgmvh8nA=",
+    "./lib/bootstrap/dist/js/bootstrap.js": "sha256-+UW802wgVfnjaSbdwyHLlU7AVplb0WToOlvN1CnzIac=",
+    "./lib/bootstrap/dist/js/bootstrap.min.63fj8s7r0e.js": "sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=",
+    "./lib/bootstrap/dist/js/bootstrap.min.js": "sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ=",
+    "./lib/bootstrap/dist/js/bootstrap.notf2xhcfb.js": "sha256-+UW802wgVfnjaSbdwyHLlU7AVplb0WToOlvN1CnzIac="
+  }
+}</script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!--Blazor-Configuration:eyJ3ZWJBc3NlbWJseSI6eyJlbnZpcm9ubWVudE5hbWUiOiJQcm9kdWN0aW9uIiwiZW52aXJvbm1lbnRWYXJpYWJsZXMiOnt9fSwic2VydmVyIjp7fSwic3NyIjp7fX0=--><!--Blazor:{"type":"server","prerenderId":"4b417aa8cd544132ad0077c196266560","key":{"locationHash":"77D12F14A8105320B1AAED6AE7E689DA0EC4483270A645E84079EAA0FFDF550D:23","formattedComponentKey":""},"sequence":0,"descriptor":"CfDJ8IoXGKWLGKJPqbZYQacCwzz22RYoX3ylDs\u002BSVO3xYtXUlqXjjX9KbKBNS8hVla31FBLNCwYw13TMs744MeVgw2ezSwGS6qOIMvTQIoldQN9KQiyIHmlo\u002BGedXzv8OoXnPRO4gNDmIorAjI2kvCPTNlGM0zddMCKGbPIrm48s3b8sEvIN45Tspi15ooqiVYKPpCxGRQjMcKks1ijofq3nXH8omG8BOLdxWAi4JWm9zaETUWrvSfv4ieAK\u002BAr6X1s8NIwn\u002B3Bvs3y\u002BpeGUtaqRskAJSFow2vM52H2J7QvXD6hPav8\u002Bstq3FMsQH6\u002BFwwoC91K66Jd1tIirb1etjbnqOf7yAK6QuIf6oidHyAxoxdWV6MZ3WLSAXREF2P4s29hwqGrbqyX\u002BfQEvejQWa6O886ILzTn1Jr6ApbfAO7BSrua22Fe1IuePCUmEuc47EY\u002BmOsct0hhWMPaIT13aCokk\u002BMKbcSz2bsmR70HHi5wEMLISxxTpzMhQf56C92bD2Zp53jMaT6YMpgBZbV34FjpSRYyOQkE9UfkHVRoGZbhFoM8Ja4VoQBX3fQYfjjB8gmu7VE1psvm3pgn30CR10DZsDFI="}--><!--bl:30--><title>Delayed sales report</title><!--/bl:30--><!--Blazor:{"prerenderId":"4b417aa8cd544132ad0077c196266560"}--></head>
+
+<body><!--Blazor:{"type":"server","prerenderId":"98efaed3044b44f9958cab897c0a01b1","key":{"locationHash":"00F41DE64A5AA5F8D659A7246CE638865A0697FA18B42278913A59D7FB35E50A:26","formattedComponentKey":""},"sequence":1,"descriptor":"CfDJ8IoXGKWLGKJPqbZYQacCwzxg3r5xXm5pZs1hfUPpW8L9tN3Vqkw0t5Y78dUtdJqxLVoGOiCanPMlc8RQ0vMudn1E4mF12IJGOjekuq0jThNV7IrQ7DaTscTwf1ijINkttntArThezDlKM2PBXm9G4lk44OTrXFVd02KylfcueoPadfqQsF7lEU5TL8ME7aOMG9MlqKeYV6sD6oY5JKyT3r/VP98DJ//2CcvD/o8HovG4MVzZjp4EYJcykxbUsWcT8JJSO3XHDRilfhzjbQvyiz3Ik2GkEN5RQdF5r9ljAtO5p6TbwKiyX0qlGRtRCbrCy0/0EfzHdaaDTFKrP\u002BNildpUfANHuk3QMy7M3CbhATGVmrVoJo6iyDRU1wvhqCwfBiViBmtqxYJfjw7VQ9rYDSv\u002B1X2wjCiSfbe8M7T3kdrGZNEVNU8BwTZffkgRT55bhYzx3q8FCEMTWc867JaSKnnPs4r0VJ84ZZE3WWn0f6D7ebPL8iBSu3hbXiNdUEQDQVZ/MnshOZwuePTofLJYovDQ1sF\u002BOJB2yMH/iwmtxpmy"}--><div class="page" b-yaz6febs3c><div class="sidebar" b-yaz6febs3c><script type="module" src="Components/Layout/NavMenu.4213728dye.razor.js" b-l782ty6iy1></script>
+
+<div class="top-row ps-3 navbar navbar-dark" b-l782ty6iy1><div class="container-fluid" b-l782ty6iy1><a class="navbar-brand" href b-l782ty6iy1>Endpoint Pulse</a></div></div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" b-l782ty6iy1>
+
+<div id="nav-scrollable" class="nav-scrollable" b-l782ty6iy1><nav class="nav flex-column" b-l782ty6iy1><div class="nav-item px-3" b-l782ty6iy1><a href="" class="nav-link"><span class="bi bi-house-door-fill-nav-menu" aria-hidden="true" b-l782ty6iy1></span> Home
+            </a></div>
+
+        <div class="nav-item px-3" b-l782ty6iy1><a href="plain" class="nav-link"><span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true" b-l782ty6iy1></span> Plain page
+            </a></div>
+
+        <div class="nav-item px-3" b-l782ty6iy1><a href="item/42" class="nav-link"><span class="bi bi-list-nested-nav-menu" aria-hidden="true" b-l782ty6iy1></span> Product 42
+            </a></div>
+
+        <div class="nav-item px-3" b-l782ty6iy1><a href="slow" class="nav-link active" aria-current="page">Delayed report</a></div>
+
+        <div class="nav-item px-3" b-l782ty6iy1><a href="slow-teapot" class="nav-link">Delayed metadata</a></div>
+
+        <div class="nav-item px-3" b-l782ty6iy1><a href="secure" class="nav-link">Secure operations</a></div>
+
+        <div class="nav-item px-3" b-l782ty6iy1><a href="teapot" class="nav-link">Custom response</a></div></nav></div></div>
+
+    <main b-yaz6febs3c><div class="top-row px-4" b-yaz6febs3c><span b-yaz6febs3c>HTTP HEAD endpoint validation</span></div>
+
+        <article class="content px-4" b-yaz6febs3c><!--bl:20--><!--bl:28--><!--bl:29--><!--/bl:29--><!--/bl:28-->
+
+<p class="eyebrow">Streaming report</p>
+<h1>Regional sales report</h1><p>Compiling the latest sales data...</p><!--/bl:20--></article></main></div>
+
+<div id="blazor-error-ui" data-nosnippet b-yaz6febs3c>
+    An unhandled error has occurred.
+    <a href="." class="reload" b-yaz6febs3c>Reload</a>
+    <span class="dismiss" b-yaz6febs3c>Close</span></div>
+        <!--Blazor:{"prerenderId":"98efaed3044b44f9958cab897c0a01b1"}-->
+    <script type="module" src="Components/Layout/ReconnectModal.abdmv1u4y3.razor.js" b-7fxkvtmmyb></script>
+
+<dialog id="components-reconnect-modal" data-nosnippet b-7fxkvtmmyb><div class="components-reconnect-container" b-7fxkvtmmyb><div class="components-rejoining-animation" aria-hidden="true" b-7fxkvtmmyb><div b-7fxkvtmmyb></div>
+            <div b-7fxkvtmmyb></div></div>
+        <p class="components-reconnect-first-attempt-visible" b-7fxkvtmmyb>
+            Rejoining the server...
+        </p>
+        <p class="components-reconnect-repeated-attempt-visible" b-7fxkvtmmyb>
+            Rejoin failed... trying again in <span id="components-seconds-to-next-attempt" b-7fxkvtmmyb></span> seconds.
+        </p>
+        <p class="components-reconnect-failed-visible" b-7fxkvtmmyb>
+            Failed to rejoin.<br b-7fxkvtmmyb>Please retry or reload the page.
+        </p>
+        <button id="components-reconnect-button" class="components-reconnect-failed-visible" b-7fxkvtmmyb>
+            Retry
+        </button>
+        <p class="components-pause-visible" b-7fxkvtmmyb>
+            The session has been paused by the server.
+        </p>
+        <p class="components-resume-failed-visible" b-7fxkvtmmyb>
+            Failed to resume the session.<br b-7fxkvtmmyb>Please retry or reload the page.
+        </p>
+        <button id="components-resume-button" class="components-pause-visible components-resume-failed-visible" b-7fxkvtmmyb>
+            Resume
+        </button></div></dialog>
+    <script src="_framework/blazor.web.dno4xfe4w5.js"></script></body></html><blazor-ssr><template blazor-component-id="30"><title>Delayed sales report</title></template><template blazor-component-id="20"><!--bl:28--><!--bl:29--><!--/bl:29--><!--/bl:28-->
+
+<p class="eyebrow">Streaming report</p>
+<h1>Regional sales report</h1><p>Fresh regional totals are available.</p></template><blazor-ssr-end></blazor-ssr-end></blazor-ssr><!--Blazor-Server-Component-State:CfDJ8IoXGKWLGKJPqbZYQacCwzzaL3vfnteijY1CwDEmclNnqTWXmGVsk6OdEQDycttCRPsZBrdxZ67cX30c1WHqEb3prh8MD5V8/i8UemZehhT8NosAytPlb1rLPsy4PYatYSrXLeMlg1api3yL8dBAap4be8tHJ8ijC28rzGsgF74fxAwuDk7cVRbQu9vYix7I+kA5Lno0I79KIOqkLGKJV+jjJByXoTXsYZohl8DAFVX9rsxUh9Mnns92bUcBag/50LUMYdalyyssrckmH5wBttTaooqjV4pjYWwG/+qkLSaJXP2sj/b3HmnESf3ArmrP07YtFr+R5UDIp8DQ2VoX4t2C+ab1LpSw5maSm83y3XcfjNyMBzX4KSVtbIqwdfc8GKoUvsz87nZB1AeRvYyE3wYFQmE9RUCsbG9ZVWd9MTV/e0heYEffrXPMhvJrPCw2HY5kz32efecQiba0ZURVf3oR6JrJhHG1ZEOs09k9S1jJTGQZRHvfq2Qr76FlpXgGn4n4yrlIXRW2wnuLWwqFwslMOpnZUTR8wwRJAMq1+zBIKZqLqbL0pbOJKH0zdPAjd7b3fR5iTktB/nDuBQ0HYnfblXYHEv0pVeA28JFqWNVrie1Oo8Dz/SPxJyF01UVggukAIRrQh8/HUZNLdIgVY0sPjdXSN4nftt9kUopcxo+0GxVyv1Faipb4+1r85sV8uQ==-->

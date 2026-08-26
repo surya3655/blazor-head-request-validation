@@ -1,0 +1,15 @@
+ M Components/Layout/NavMenu.razor
+ M Dockerfile
+ M README.md
+ M ../evidence/TEST-REPORT.md
+?? Components/Pages/SlowTeapot.razor
+?? bin/
+?? obj/
+?? scripts/
+?? ../evidence/container-image-verified-20260826/
+?? ../evidence/container-interactive-verified-20260826/
+?? ../evidence/container-static-verified-20260826/
+?? ../evidence/local-interactive-verified-20260826/
+?? ../evidence/local-static-20260826/
+?? ../evidence/local-static-verified-20260826/
+?? ../evidence/verified-local-static-20260826/

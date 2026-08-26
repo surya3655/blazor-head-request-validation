@@ -1,0 +1,8 @@
+capturedUtc=2026-08-26T10:08:57.2220267Z
+baseUrl=http://localhost:5181
+expectedRenderMode=InteractiveServer
+observedRenderMode=InteractiveServer
+gitBranch=main
+gitSha=9489693d9d95f6eb51a105137f327895d0fad48a
+gitDirty=true
+command=Write-Output 'LOCAL-INTERACTIVE-RERUN'; Set-Location 'D:\ValidationSample\blazor-head-request-validation\HeadValidation'; & '.\scripts\Test-HeadEndpoints.ps1' -BaseUrl 'http://localhost:5181' -ExpectedRenderMode 'InteractiveServer' -EvidenceDirectory 'D:\ValidationSample\blazor-head-request-validation\evidence\local-interactive-verified-20260826'

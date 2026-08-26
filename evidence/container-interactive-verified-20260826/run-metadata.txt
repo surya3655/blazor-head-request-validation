@@ -1,0 +1,8 @@
+capturedUtc=2026-08-26T10:08:02.8447105Z
+baseUrl=http://localhost:5184
+expectedRenderMode=InteractiveServer
+observedRenderMode=InteractiveServer
+gitBranch=main
+gitSha=9489693d9d95f6eb51a105137f327895d0fad48a
+gitDirty=true
+command=Set-Location 'D:\ValidationSample\blazor-head-request-validation\HeadValidation'; & '.\scripts\Test-HeadEndpoints.ps1' -BaseUrl 'http://localhost:5184' -ExpectedRenderMode 'InteractiveServer' -EvidenceDirectory 'D:\ValidationSample\blazor-head-request-validation\evidence\container-interactive-verified-20260826'

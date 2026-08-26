@@ -1,0 +1,8 @@
+capturedUtc=2026-08-26T10:07:10.0677764Z
+baseUrl=http://localhost:5183
+expectedRenderMode=StaticSsr
+observedRenderMode=StaticSsr
+gitBranch=main
+gitSha=9489693d9d95f6eb51a105137f327895d0fad48a
+gitDirty=true
+command=Set-Location 'D:\ValidationSample\blazor-head-request-validation\HeadValidation'; & '.\scripts\Test-HeadEndpoints.ps1' -BaseUrl 'http://localhost:5183' -ExpectedRenderMode 'StaticSsr' -EvidenceDirectory 'D:\ValidationSample\blazor-head-request-validation\evidence\container-static-verified-20260826'

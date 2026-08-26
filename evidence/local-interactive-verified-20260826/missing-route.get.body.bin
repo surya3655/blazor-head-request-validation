@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/" />
+    
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.46ein0sx1k.css" />
+    <link rel="stylesheet" href="app.8drynd3qwf.css" />
+    <link rel="stylesheet" href="HeadValidation.p4nzq4s7ph.styles.css" />
+    <script type="importmap">{
+  "imports": {
+    "./Components/Layout/NavMenu.razor.js": "./Components/Layout/NavMenu.4213728dye.razor.js",
+    "./Components/Layout/ReconnectModal.razor.js": "./Components/Layout/ReconnectModal.abdmv1u4y3.razor.js",
+    "./_framework/blazor.server.js": "./_framework/blazor.server.02y5zgxqby.js",
+    "./_framework/blazor.web.js": "./_framework/blazor.web.dno4xfe4w5.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.js": "./lib/bootstrap/dist/js/bootstrap.bundle.6cfz1n2cew.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.js": "./lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.js": "./lib/bootstrap/dist/js/bootstrap.esm.min.jj8uyg4cgr.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.js": "./lib/bootstrap/dist/js/bootstrap.esm.vr1egmr9el.js",
+    "./lib/bootstrap/dist/js/bootstrap.min.js": "./lib/bootstrap/dist/js/bootstrap.min.63fj8s7r0e.js",
+    "./lib/bootstrap/dist/js/bootstrap.js": "./lib/bootstrap/dist/js/bootstrap.notf2xhcfb.js"
+  }
+}</script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!--Blazor-Configuration:eyJ3ZWJBc3NlbWJseSI6eyJlbnZpcm9ubWVudE5hbWUiOiJEZXZlbG9wbWVudCIsImVudmlyb25tZW50VmFyaWFibGVzIjp7fX0sInNlcnZlciI6e30sInNzciI6e319--><!--Blazor:{"type":"server","prerenderId":"1ba7cbf5f13e4cae8226f6e58acc270a","key":{"locationHash":"77D12F14A8105320B1AAED6AE7E689DA0EC4483270A645E84079EAA0FFDF550D:23","formattedComponentKey":""},"sequence":0,"descriptor":"CfDJ8K5DEq0YMVxPrHGeRA7VbqpX1LeSngApNUj8AUqfTPFio/DPqtVfmxmLaQ/rFFfO64cml2BUHCSRax87awhgWkPLzbE1Mb9QBwWvSRHRILYq4Zkoif1iW\u002Bz3thtJVRW9u1TqD4TutFjE810hk2Jl3FHM8RYRgq6uSz\u002BBd8C8qJzloEz6iOeCabot7u33Iq81ZhyRCx1f2HWkPt2iU73IbZ1kOHJNNBz3m2XXeA20TZwDR4zg/NMfZjd8CC3GqcR3pHoZ5QyhOwfeAhWYB0w7m4UDxV8ieasN216sGKEZvk7bgXuf8pmunLfDJmmPX8YAWWuFo8YnA\u002BDBmJ7SmZf8wzmtAkM2PT3gPqyp5S/q/psnMj8NG6Q9AHY9UrwVeHW0IDfu8DZZtKzxstMBnNpFkAFXaoco/0XpbubUTZegJtcEIdc7HsaqffIxN\u002BVqbxwhu2opN5pZ4EQ1T1VZSrjEQ0GgYkvzhRt3DOceCxKWAW/hZ4OPGDuwE53yQwaTUnzmHXsXk7Hl9tK\u002BbehyixEDSSja\u002BharMcjGObMBcR91mzihZ1ZNeMvM/0nrjEUaNhRIKnRgkpOLXnMzgY/m1wiZSTs="}--><title>Route not found</title><!--Blazor:{"prerenderId":"1ba7cbf5f13e4cae8226f6e58acc270a"}--></head>
+
+<body><!--Blazor:{"type":"server","prerenderId":"66123ba8bad549f2a823125caf7fe800","key":{"locationHash":"00F41DE64A5AA5F8D659A7246CE638865A0697FA18B42278913A59D7FB35E50A:26","formattedComponentKey":""},"sequence":1,"descriptor":"CfDJ8K5DEq0YMVxPrHGeRA7VbqpNTT/U7sNc8KmFkSYfiYcjiMShoFKbdhP0F8k3S5Ig1jUan48rZXNK/wtOu4munKpYGK4dDr0m4rZ0UeGgHbuWJ1iWLi0SyzU9cUCzWPjsRAsIKyopJUSKmDy6cuotyXUV5KKEJTBMM2FZlcXds/A2Jf9V0/\u002BTVWU82B8mYrcKlj\u002B/kWl5C2zAFAbDJ6hg8RaTtCXkDYZZsczj6EoJuCw95gcNZCioOpoV4n4gbI1HcgmfoABdS0uSGLLKtKZDWMq4vlTyGgLEfpN/vZ75sLBVw5\u002BDNkSSQC/EDyLBRB1oAVjQqXiXcgIX7q3dhIfW5Fytacaf0HjvYWkmP/JMZqUxYDyDlWaqZ\u002Bn3oMPSQVRRfadoIDtq4bElKZKLBwelHV0ORgGi5wIuzTQoJpmQ6IBrR8LiCxN4x4YnacH3yLG6AwyTNh3VKYbhjQ6dMJ\u002Bpjm7maGwfq4lnXctmjPSw8YPJOLxcJXI9Uh\u002BOuOaBPlMcvxRZW37JVsQRWbbSwFdmkMFL28ercuQhnj3YkCPQOisC"}--><div class="page" b-he2ga78z55><div class="sidebar" b-he2ga78z55><script type="module" src="Components/Layout/NavMenu.4213728dye.razor.js" b-xe68fp5bko></script>
+
+<div class="top-row ps-3 navbar navbar-dark" b-xe68fp5bko><div class="container-fluid" b-xe68fp5bko><a class="navbar-brand" href b-xe68fp5bko>Endpoint Pulse</a></div></div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" b-xe68fp5bko>
+
+<div id="nav-scrollable" class="nav-scrollable" b-xe68fp5bko><nav class="nav flex-column" b-xe68fp5bko><div class="nav-item px-3" b-xe68fp5bko><a href="" class="nav-link"><span class="bi bi-house-door-fill-nav-menu" aria-hidden="true" b-xe68fp5bko></span> Home
+            </a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="plain" class="nav-link"><span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true" b-xe68fp5bko></span> Plain page
+            </a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="item/42" class="nav-link"><span class="bi bi-list-nested-nav-menu" aria-hidden="true" b-xe68fp5bko></span> Product 42
+            </a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="slow" class="nav-link">Delayed report</a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="secure" class="nav-link">Secure operations</a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="teapot" class="nav-link">Custom response</a></div></nav></div></div>
+
+    <main b-he2ga78z55><div class="top-row px-4" b-he2ga78z55><span b-he2ga78z55>HTTP HEAD endpoint validation</span></div>
+
+        <article class="content px-4" b-he2ga78z55>
+
+<p class="eyebrow">404</p>
+<h1>Route not found</h1>
+<p>No Razor component endpoint declares this route.</p></article></main></div>
+
+<div id="blazor-error-ui" data-nosnippet b-he2ga78z55>
+    An unhandled error has occurred.
+    <a href="." class="reload" b-he2ga78z55>Reload</a>
+    <span class="dismiss" b-he2ga78z55>Close</span></div>
+        <!--Blazor:{"prerenderId":"66123ba8bad549f2a823125caf7fe800"}-->
+    <script type="module" src="Components/Layout/ReconnectModal.abdmv1u4y3.razor.js" b-6r5n9gzwvp></script>
+
+<dialog id="components-reconnect-modal" data-nosnippet b-6r5n9gzwvp><div class="components-reconnect-container" b-6r5n9gzwvp><div class="components-rejoining-animation" aria-hidden="true" b-6r5n9gzwvp><div b-6r5n9gzwvp></div>
+            <div b-6r5n9gzwvp></div></div>
+        <p class="components-reconnect-first-attempt-visible" b-6r5n9gzwvp>
+            Rejoining the server...
+        </p>
+        <p class="components-reconnect-repeated-attempt-visible" b-6r5n9gzwvp>
+            Rejoin failed... trying again in <span id="components-seconds-to-next-attempt" b-6r5n9gzwvp></span> seconds.
+        </p>
+        <p class="components-reconnect-failed-visible" b-6r5n9gzwvp>
+            Failed to rejoin.<br b-6r5n9gzwvp>Please retry or reload the page.
+        </p>
+        <button id="components-reconnect-button" class="components-reconnect-failed-visible" b-6r5n9gzwvp>
+            Retry
+        </button>
+        <p class="components-pause-visible" b-6r5n9gzwvp>
+            The session has been paused by the server.
+        </p>
+        <p class="components-resume-failed-visible" b-6r5n9gzwvp>
+            Failed to resume the session.<br b-6r5n9gzwvp>Please retry or reload the page.
+        </p>
+        <button id="components-resume-button" class="components-pause-visible components-resume-failed-visible" b-6r5n9gzwvp>
+            Resume
+        </button></div></dialog>
+    <script src="_framework/blazor.web.dno4xfe4w5.js"></script></body></html>

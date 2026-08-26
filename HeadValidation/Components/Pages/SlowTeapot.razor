@@ -1,0 +1,35 @@
+@page "/slow-teapot"
+@attribute [StreamRendering]
+@inject HitCounter Counter
+@inject IHttpContextAccessor HttpContextAccessor
+
+<p class="eyebrow">Streaming response metadata</p>
+<h1>Delayed maintenance window</h1>
+
+@if (_responseReady)
+{
+    <p>The delayed response metadata has been applied.</p>
+}
+else
+{
+    <p>Preparing delayed response metadata...</p>
+}
+
+@code {
+    private bool _responseReady;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Counter.Increment();
+        await Task.Delay(TimeSpan.FromSeconds(2));
+
+        var response = HttpContextAccessor.HttpContext?.Response;
+        if (response is not null && !response.HasStarted)
+        {
+            response.StatusCode = StatusCodes.Status418ImATeapot;
+            response.Headers["X-Test"] = "delayed";
+        }
+
+        _responseReady = true;
+    }
+}

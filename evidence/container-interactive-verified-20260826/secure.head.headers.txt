@@ -1,0 +1,5 @@
+HTTP/1.1 302 Found
+Connection: close
+Date: Wed, 26 Aug 2026 10:08:00 GMT
+Server: Kestrel
+Location: http://localhost:5184/login?ReturnUrl=%2Fsecure

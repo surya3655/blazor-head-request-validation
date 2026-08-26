@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/" />
+    
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.46ein0sx1k.css" />
+    <link rel="stylesheet" href="app.8drynd3qwf.css" />
+    <link rel="stylesheet" href="HeadValidation.p4nzq4s7ph.styles.css" />
+    <script type="importmap">{
+  "imports": {
+    "./Components/Layout/NavMenu.razor.js": "./Components/Layout/NavMenu.4213728dye.razor.js",
+    "./Components/Layout/ReconnectModal.razor.js": "./Components/Layout/ReconnectModal.abdmv1u4y3.razor.js",
+    "./_framework/blazor.server.js": "./_framework/blazor.server.02y5zgxqby.js",
+    "./_framework/blazor.web.js": "./_framework/blazor.web.dno4xfe4w5.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.js": "./lib/bootstrap/dist/js/bootstrap.bundle.6cfz1n2cew.js",
+    "./lib/bootstrap/dist/js/bootstrap.bundle.min.js": "./lib/bootstrap/dist/js/bootstrap.bundle.min.493y06b0oq.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.min.js": "./lib/bootstrap/dist/js/bootstrap.esm.min.jj8uyg4cgr.js",
+    "./lib/bootstrap/dist/js/bootstrap.esm.js": "./lib/bootstrap/dist/js/bootstrap.esm.vr1egmr9el.js",
+    "./lib/bootstrap/dist/js/bootstrap.min.js": "./lib/bootstrap/dist/js/bootstrap.min.63fj8s7r0e.js",
+    "./lib/bootstrap/dist/js/bootstrap.js": "./lib/bootstrap/dist/js/bootstrap.notf2xhcfb.js"
+  }
+}</script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!--Blazor-Configuration:eyJ3ZWJBc3NlbWJseSI6eyJlbnZpcm9ubWVudE5hbWUiOiJEZXZlbG9wbWVudCIsImVudmlyb25tZW50VmFyaWFibGVzIjp7fX0sInNlcnZlciI6e30sInNzciI6e319--><!--Blazor:{"type":"server","prerenderId":"75a5b23c44e34744a3a43a1d2e98c7ca","key":{"locationHash":"77D12F14A8105320B1AAED6AE7E689DA0EC4483270A645E84079EAA0FFDF550D:23","formattedComponentKey":""},"sequence":0,"descriptor":"CfDJ8K5DEq0YMVxPrHGeRA7VbqpqQ3so/Z4YTOvqU6r4AZbptXYIRHiCopHxf/eoT5AQ\u002BLcr7hy//a9OqB1POKS1D/2TqXqOQiuI8l2Bj6daQcr4/FgSKYHtuqd57cCC8NStE3nww6guIRrOjoW2K9IcqkDL/4RpndYjNMwWoVWPi\u002BwYQdwwlDD1wth92eBId3NaAeamKESS1UGUsUEc\u002BvsnADU1dGV1m2qd/1IQJC2jQn2COKsVJDV1UwueptTagw/EifH8vKHp9LKfe7UW\u002BTZUrsSinrgwMQ0MZpEeZu8JcvysZWb29vRyazgJTMvTWfSYNOVt2mpbg7IF1PgRxQqyOzg6GtGoeT\u002B7otoWl6phdsGxKCQmUl7p9sTq\u002BB2zDYPAvMVC3bs40GLkiwTEjbemvqBFlGsTYJ1rWuuHxgF/Rt5yEbRW2TzsA5MaXYHiMI0jQedieYBLNSK9zpnj87VUWinOC5qYo5W2pMQbmL4tgK35kPX8HQ\u002B4Zdlbc1Q5vsmjUb1yOE\u002BJEFx0WFVMq34Ob6ObMmu1FfoCp9QFaobitKdzArxn0Y00rd\u002BcEeABnggUmGN8pCnRPsxfBwv5dQwm9x0="}--><title>Maintenance response</title><!--Blazor:{"prerenderId":"75a5b23c44e34744a3a43a1d2e98c7ca"}--></head>
+
+<body><!--Blazor:{"type":"server","prerenderId":"400f05702b6d4181ad9fe102711fab59","key":{"locationHash":"00F41DE64A5AA5F8D659A7246CE638865A0697FA18B42278913A59D7FB35E50A:26","formattedComponentKey":""},"sequence":1,"descriptor":"CfDJ8K5DEq0YMVxPrHGeRA7VbqrBspZ9v8uYysO2aC27QXlcfBLgklCocDmfhYmBIB5iXqdL2rWysvXZvluJJOiNCWeyg8GVgsRmGOzrO3miZU0t40U\u002B4tRPle/0YmFgtCvb05Ju/CFRkJqI9vnTDEuSsolLe5XbGW9QkzLldXsgYor6zEk9DMb47xMu7TErHzEZUM/eIVRrQfnxkSmgRLj5glXChWsd/AKWnVde8YpEMNGmgmXT5FZ1NjN3khoZiixhjfq1\u002BOG/EEXyqJLnPVmLYYg/FD\u002B8yhq4US8nF2VoQeStGJ0HlKMios5pmf\u002BxsA8Ec0YsOGztySP5WNvCEi62DWay91oMrCHmUo9MwwEu8eZCgUPLuZT/dV8mrQ3hhBOQrLMMXAI4cLMJ3cukCJnYyiZYrQpQsDaFPp58YLR4P96CVJrZ3NnY8BAD2crYNwNvQeeodk4ZXVobdPz8h7WUwK3q6yvi\u002BxwCyZ0/VoRrHSBTh69RyyxSZ8eg4f7hTdtMJ1reHiirrmOmuw4SX0g3y7Us5SMYgizHqKsef56XFa7E"}--><div class="page" b-he2ga78z55><div class="sidebar" b-he2ga78z55><script type="module" src="Components/Layout/NavMenu.4213728dye.razor.js" b-xe68fp5bko></script>
+
+<div class="top-row ps-3 navbar navbar-dark" b-xe68fp5bko><div class="container-fluid" b-xe68fp5bko><a class="navbar-brand" href b-xe68fp5bko>Endpoint Pulse</a></div></div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" b-xe68fp5bko>
+
+<div id="nav-scrollable" class="nav-scrollable" b-xe68fp5bko><nav class="nav flex-column" b-xe68fp5bko><div class="nav-item px-3" b-xe68fp5bko><a href="" class="nav-link"><span class="bi bi-house-door-fill-nav-menu" aria-hidden="true" b-xe68fp5bko></span> Home
+            </a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="plain" class="nav-link"><span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true" b-xe68fp5bko></span> Plain page
+            </a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="item/42" class="nav-link"><span class="bi bi-list-nested-nav-menu" aria-hidden="true" b-xe68fp5bko></span> Product 42
+            </a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="slow" class="nav-link">Delayed report</a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="secure" class="nav-link">Secure operations</a></div>
+
+        <div class="nav-item px-3" b-xe68fp5bko><a href="teapot" class="nav-link active" aria-current="page">Custom response</a></div></nav></div></div>
+
+    <main b-he2ga78z55><div class="top-row px-4" b-he2ga78z55><span b-he2ga78z55>HTTP HEAD endpoint validation</span></div>
+
+        <article class="content px-4" b-he2ga78z55>
+
+<p class="eyebrow">Custom application response</p>
+<h1>Maintenance brew window</h1>
+<p>This page intentionally returns status 418 and the application header <code>X-Test: hello</code>.</p></article></main></div>
+
+<div id="blazor-error-ui" data-nosnippet b-he2ga78z55>
+    An unhandled error has occurred.
+    <a href="." class="reload" b-he2ga78z55>Reload</a>
+    <span class="dismiss" b-he2ga78z55>Close</span></div>
+        <!--Blazor:{"prerenderId":"400f05702b6d4181ad9fe102711fab59"}-->
+    <script type="module" src="Components/Layout/ReconnectModal.abdmv1u4y3.razor.js" b-6r5n9gzwvp></script>
+
+<dialog id="components-reconnect-modal" data-nosnippet b-6r5n9gzwvp><div class="components-reconnect-container" b-6r5n9gzwvp><div class="components-rejoining-animation" aria-hidden="true" b-6r5n9gzwvp><div b-6r5n9gzwvp></div>
+            <div b-6r5n9gzwvp></div></div>
+        <p class="components-reconnect-first-attempt-visible" b-6r5n9gzwvp>
+            Rejoining the server...
+        </p>
+        <p class="components-reconnect-repeated-attempt-visible" b-6r5n9gzwvp>
+            Rejoin failed... trying again in <span id="components-seconds-to-next-attempt" b-6r5n9gzwvp></span> seconds.
+        </p>
+        <p class="components-reconnect-failed-visible" b-6r5n9gzwvp>
+            Failed to rejoin.<br b-6r5n9gzwvp>Please retry or reload the page.
+        </p>
+        <button id="components-reconnect-button" class="components-reconnect-failed-visible" b-6r5n9gzwvp>
+            Retry
+        </button>
+        <p class="components-pause-visible" b-6r5n9gzwvp>
+            The session has been paused by the server.
+        </p>
+        <p class="components-resume-failed-visible" b-6r5n9gzwvp>
+            Failed to resume the session.<br b-6r5n9gzwvp>Please retry or reload the page.
+        </p>
+        <button id="components-resume-button" class="components-pause-visible components-resume-failed-visible" b-6r5n9gzwvp>
+            Resume
+        </button></div></dialog>
+    <script src="_framework/blazor.web.dno4xfe4w5.js"></script></body></html><!--Blazor-Server-Component-State:CfDJ8K5DEq0YMVxPrHGeRA7VbqrbA+2TA/1hiKwP4T4M0wImgQlnOzPpJp+91aO2v3UZNZsTf/UQtW1E/p0AW8aVliFm6H5fuzJKTcIw4wTersv3jKFwfXQGtO3ccuBSESSCfBEpM1vZnXwPeL7EOI3MFB+ySM9rGh3fX/xi6jWJ2HKQrPaEUqTybLrslgV16aX/a42DTWjvDLfM+5OaTnRt1Lha9DhJ19MrJz0WQaJOynZsZOXNMWDBNvdRCFznGiQH1hnwwQc+Xk4jc99SWmrp3UYy45RQHB6fySffh3AAOBC6K6Q56as/hn2gtIMAxLPrULiVrGMh8Pz8Py+1hqqoTucN1j7KSJLnU7ymNe9lPdNttes9nf5N/GDrZ0MMwacU1x3jmJFiHh+qri58JH0kbNso2qLKtaqFz4qtYsDcDpW11pgIMsvdKTpgV6lw6XGyfrDHXdEsX/b+M4mmvCHed7fq2ciQHm9WoNMoCqNox6TKqyzIHVMHRqkicgCqVTUqiw65dR3s5JzIn8XJS6LZq7/swvooNNtJsgyCcFcI81zjJzu3j3NO8FaM35oWxzHf8XNcx29CLY8s5rr3g5SgXRjxd1r95lrN5J7kT2TvQ+Z2m3rraWAbSFy2wiRoyMMPPxWxgwbZHXkIgdhro1RvilCCLSePpWUgD2oahLnUeKX5Nm4QBgRsHM3EZJDwPM4cLQ==-->

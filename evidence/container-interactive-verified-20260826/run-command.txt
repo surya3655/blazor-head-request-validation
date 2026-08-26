@@ -1,0 +1,1 @@
+﻿docker run --name headvalidation-interactive-verified -d -p 5184:8080 -e RenderMode=InteractiveServer headvalidation:verified

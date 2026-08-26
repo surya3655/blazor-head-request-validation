@@ -20,7 +20,7 @@ RUN dotnet build "./HeadValidation.csproj" -c $BUILD_CONFIGURATION -o /app/build
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./HeadValidation.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./HeadValidation.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false --verbosity normal
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final

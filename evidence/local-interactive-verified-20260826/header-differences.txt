@@ -1,0 +1,7 @@
+/secure	Content-Length	GET=0	HEAD=<absent>
+/logo.png	Content-Length	GET=1148	HEAD=<absent>
+/hits	Content-Type	GET=application/json; charset=utf-8	HEAD=text/html; charset=utf-8
+/hits	Cache-Control	GET=<absent>	HEAD=no-cache, no-store, max-age=0
+/login	Content-Type	GET=text/plain	HEAD=text/html; charset=utf-8
+/login	Content-Length	GET=55	HEAD=<absent>
+/login	Cache-Control	GET=<absent>	HEAD=no-cache, no-store, max-age=0

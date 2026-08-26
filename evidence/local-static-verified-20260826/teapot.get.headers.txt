@@ -1,0 +1,9 @@
+HTTP/1.1 418 I'm a teapot
+Content-Type: text/html; charset=utf-8
+Date: Wed, 26 Aug 2026 10:11:15 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+X-Test: hello
+

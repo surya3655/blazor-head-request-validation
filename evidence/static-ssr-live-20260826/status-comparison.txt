@@ -1,0 +1,11 @@
+/	GET=200	HEAD=200	expected-GET=200	parity-required
+/plain	GET=200	HEAD=200	expected-GET=200	parity-required
+/item/42	GET=200	HEAD=200	expected-GET=200	parity-required
+/slow	GET=200	HEAD=200	expected-GET=200	parity-required
+/slow-teapot	GET=200	HEAD=200	expected-GET=200	parity-required
+/secure	GET=302	HEAD=302	expected-GET=302	parity-required
+/teapot	GET=418	HEAD=418	expected-GET=418	parity-required
+/missing-route	GET=404	HEAD=404	expected-GET=404	parity-required
+/logo.png	GET=200	HEAD=200	expected-GET=200	parity-required
+/hits	GET=200	HEAD=405	expected-GET=200	control-only
+/login	GET=200	HEAD=405	expected-GET=200	control-only

@@ -1,0 +1,11 @@
+/	HEAD-bytes=0
+/plain	HEAD-bytes=0
+/item/42	HEAD-bytes=0
+/slow	HEAD-bytes=0
+/slow-teapot	HEAD-bytes=0
+/secure	HEAD-bytes=0
+/teapot	HEAD-bytes=0
+/missing-route	HEAD-bytes=0
+/logo.png	HEAD-bytes=0
+/hits	HEAD-bytes=0
+/login	HEAD-bytes=0

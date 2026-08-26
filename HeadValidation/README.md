@@ -12,6 +12,7 @@ middleware that could hide the behavior under test.
 | `/plain` | Basic service overview | 200 |
 | `/item/42` | Parameterized inventory record | 200 |
 | `/slow` | Two-second streaming sales report | 200 |
+| `/slow-teapot` | Streaming page that attempts to set status and a header after two seconds | 200 |
 | `/secure` | Cookie-protected operations dashboard | 302 |
 | `/teapot` | Application-defined status and `X-Test: hello` header | 418 |
 | `/missing-route` | Undeclared route | 404 |
@@ -46,10 +47,18 @@ The page also displays the `RenderMode` value supplied by the selected launch
 profile. The control uses a normal Blazor `@onclick` handler and no custom
 JavaScript, so a changed count directly proves that the component is interactive.
 
-The script sends HEAD and GET to every route, compares statuses, verifies that
-HEAD bodies are empty, checks the HTML content type and custom header, proves
-that HEAD renders the page through `/hits`, times `/slow`, and saves full raw
-headers under `artifacts/`.
+The committed script sends HEAD and GET to every component route, compares
+statuses, captures raw HTTP/1.1 HEAD responses to prove their bodies are empty,
+checks the synchronous custom header, captures `/plain` as render-mode proof,
+and times `/slow` once per method. It records selected header differences rather
+than claiming byte-for-byte header equality. `/hits` and `/login` are included
+as minimal-API controls; their HEAD results are observations, not component-route
+assertions.
+
+`/slow-teapot` records whether metadata applied after streaming begins survives.
+Because both GET and HEAD currently return 200 without the delayed `X-Test`
+header, the result is a general streaming metadata limitation rather than a
+HEAD-only status/header mismatch.
 
 For a direct manual comparison, use `curl -I`, not `curl -X HEAD`:
 
@@ -63,9 +72,9 @@ curl.exe -s -o NUL -D - http://localhost:5180/plain
 - Published output: run `dotnet publish -c Release -o ./artifacts/publish`, start
   `./artifacts/publish/HeadValidation.exe --urls http://localhost:5182`, and run
   the script with that base URL.
-- .NET 10 upgrade: change only `TargetFramework` and the SDK pin to a .NET 10
-  installation, record the expected 405 responses, then restore .NET 11 and
-  confirm the assertions pass. Do not add a custom HEAD mapping.
+- .NET 10 upgrade: use a committed fixture or commit pair, capture the project
+  diff, `dotnet --info`, build logs, and request artifacts for both versions.
+  Results from an external project copy are not reproducible evidence.
 - Trimming: run `dotnet publish -c Release -p:PublishTrimmed=true` and repeat the
   published-output check. Native AOT isn't supported for interactive Blazor
   Server applications.
@@ -75,9 +84,24 @@ curl.exe -s -o NUL -D - http://localhost:5180/plain
   `@page` route, and send HEAD without restarting.
 - IDE and command line: run each launch profile once from VS Code and once with
   `dotnet run`.
-- Container: run `docker build -t head-validation .`, then
-  `docker run --rm -p 5183:8080 head-validation`; validate port 5183.
+- Container: build once, then pass the render mode explicitly and retain
+  `docker inspect` output for the running container:
 
-For every matrix entry, retain the generated HEAD and GET header files, the
-`hits.txt` before/after values, the timing file, server logs, SDK version, and
-the exact launch command with the validation report.
+```powershell
+docker build -t head-validation .
+docker run --name head-static -d -p 5183:8080 -e RenderMode=StaticSsr head-validation
+docker inspect head-static > ../evidence/container-static/container.inspect.json
+./scripts/Test-HeadEndpoints.ps1 -BaseUrl http://localhost:5183 -ExpectedRenderMode StaticSsr -EvidenceDirectory ../evidence/container-static
+
+docker run --name head-interactive -d -p 5184:8080 -e RenderMode=InteractiveServer head-validation
+docker inspect head-interactive > ../evidence/container-interactive/container.inspect.json
+./scripts/Test-HeadEndpoints.ps1 -BaseUrl http://localhost:5184 -ExpectedRenderMode InteractiveServer -EvidenceDirectory ../evidence/container-interactive
+```
+
+For every matrix entry, retain the generated HEAD and GET headers, raw HEAD
+response and body-size files, timings, header-difference summary, rendered mode
+proof, server logs, SDK information, run metadata, Git status, and source hashes.
+
+The raw body validator currently targets cleartext HTTP/1.1. HTTPS and HTTP/2
+require separate protocol-specific runs and must not be inferred from these
+artifacts.

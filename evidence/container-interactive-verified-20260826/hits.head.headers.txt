@@ -1,0 +1,8 @@
+HTTP/1.1 405 Method Not Allowed
+Connection: close
+Content-Type: text/html; charset=utf-8
+Date: Wed, 26 Aug 2026 10:08:01 GMT
+Server: Kestrel
+Allow: GET
+Cache-Control: no-cache, no-store, max-age=0
+Content-Security-Policy: frame-ancestors 'self'
