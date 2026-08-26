@@ -1,0 +1,17 @@
+PS D:\ValidationSample\BlazorDomSyncRepro> curl.exe -s -o NUL -D - http://localhost:5048/counter
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Wed, 26 Aug 2026 04:36:10 GMT
+Server: Kestrel
+Cache-Control: no-cache, no-store
+Pragma: no-cache
+Set-Cookie: .AspNetCore.Antiforgery.Utsiw3seF4M=CfDJ8K5DEq0YMVxPrHGeRA7Vbqpjctxkby9Cy4rpp8tto_0imlTEFSh2BlhNtD051v8gZkmuSlyU-9OuX6LLj1m_dMTHwXWA2vB658TQmsYJY-gkQ1w5Vl85L08iovr-ef__QMZe-4j-VYkJvHPrcvt_KC8; path=/; samesite=strict; httponly
+Transfer-Encoding: chunked
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+X-Frame-Options: SAMEORIGIN
+
+PS D:\ValidationSample\BlazorDomSyncRepro> curl.exe -I http://localhost:5048/counter
+HTTP/1.1 404 Not Found
+Date: Wed, 26 Aug 2026 04:36:55 GMT
+Server: Kestrel

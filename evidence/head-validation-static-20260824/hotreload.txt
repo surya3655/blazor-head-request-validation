@@ -1,0 +1,51 @@
+C:\Users\SuryaElayaperumal>curl.exe -I http://localhost:5180/plain
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Tue, 25 Aug 2026 04:20:45 GMT
+Server: Kestrel
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+
+
+C:\Users\SuryaElayaperumal>curl.exe -I http://localhost:5180/hot-reload-new
+HTTP/1.1 404 Not Found
+Content-Type: text/html; charset=utf-8
+Date: Tue, 25 Aug 2026 04:20:48 GMT
+Server: Kestrel
+Content-Security-Policy: frame-ancestors 'self'
+
+
+C:\Users\SuryaElayaperumal>curl.exe -I http://localhost:5180/hot-reload-new
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Tue, 25 Aug 2026 04:22:03 GMT
+Server: Kestrel
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+
+
+C:\Users\SuryaElayaperumal>curl.exe -s -o NUL -D - http://localhost:5180/hot-reload-new
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Tue, 25 Aug 2026 04:22:08 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+
+
+C:\Users\SuryaElayaperumal>curl.exe -I http://localhost:5180/plain-reloaded
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Tue, 25 Aug 2026 04:23:13 GMT
+Server: Kestrel
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+
+
+C:\Users\SuryaElayaperumal>curl.exe -I http://localhost:5180/plain
+HTTP/1.1 404 Not Found
+Content-Type: text/html; charset=utf-8
+Date: Tue, 25 Aug 2026 04:23:15 GMT
+Server: Kestrel
+Content-Security-Policy: frame-ancestors 'self'

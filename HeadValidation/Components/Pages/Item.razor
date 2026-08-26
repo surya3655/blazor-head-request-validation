@@ -1,0 +1,15 @@
+@page "/item/{Id:int}"
+@inject HitCounter Counter
+
+<PageTitle>Inventory item @Id</PageTitle>
+
+<p class="eyebrow">Warehouse inventory</p>
+<h1>Item @Id</h1>
+<p>The requested inventory record was resolved from its route parameter.</p>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    protected override void OnInitialized() => Counter.Increment();
+}

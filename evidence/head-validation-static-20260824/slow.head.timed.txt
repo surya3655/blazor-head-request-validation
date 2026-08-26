@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Mon, 24 Aug 2026 12:04:10 GMT
+Server: Kestrel
+Content-Encoding: identity
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+
+
+status=200
+time=0.002250
+exit=0

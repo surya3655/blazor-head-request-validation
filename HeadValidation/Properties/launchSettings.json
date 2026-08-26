@@ -1,0 +1,32 @@
+{
+  "profiles": {
+    "StaticSsr": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RenderMode": "StaticSsr"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5180"
+    },
+    "InteractiveServer": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RenderMode": "InteractiveServer"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5181"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "ASPNETCORE_HTTP_PORTS": "8080"
+      },
+      "publishAllPorts": true,
+      "useSSL": false
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"
+}

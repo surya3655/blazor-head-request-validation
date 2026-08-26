@@ -1,0 +1,54 @@
+PS D:\ValidationSample\HeadValidation> dotnet watch --launch-profile StaticSsr
+dotnet watch 🔥 Hot reload enabled. For a list of supported edits, see https://aka.ms/dotnet/hot-reload.
+dotnet watch 💡 Press Ctrl+R to restart.
+Restore complete (0.2s)
+
+Build succeeded in 0.3s
+    info NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy
+  HeadValidation net11.0 succeeded (0.4s) → bin\Debug\net11.0\HeadValidation.dll
+
+Build succeeded in 0.8s
+dotnet watch ⌚ Loading projects ...
+dotnet watch ⌚ Loaded 1 project(s) in 0.7s.
+Using launch settings from D:\ValidationSample\HeadValidation\Properties\launchSettings.json...
+dotnet watch ⌚ Waiting for changes
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5180
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\ValidationSample\HeadValidation
+dotnet watch ⌚ File added: .\Components\Pages\HotReloadProbe.razor
+dotnet watch ⌚ Loading projects ...
+dotnet watch ⌚ Loaded 1 project(s) in 0.7s.
+dotnet watch 🔥 C# and Razor changes applied in 1499ms.
+dotnet watch ⌚ File updated: .\Components\Pages\HotReloadProbe.razor
+dotnet watch 🔥 C# and Razor changes applied in 436ms.
+dotnet watch ⌚ File updated: .\Components\Pages\Plain.razor
+dotnet watch ❌ D:\ValidationSample\HeadValidation\Components\Pages\Plain.razor(1,24): error RZ1017: Unexpected literal following the 'page' directive. Expected 'line break'.
+dotnet watch ❌ D:\ValidationSample\HeadValidation\Components\Pages\Plain.razor(1,25): error RZ2005: The 'inject' directive must appear at the start of the line.
+dotnet watch 🔥 C# and Razor changes applied in 249ms.
+dotnet watch ⌚ File updated: .\Components\Pages\Plain.razor
+dotnet watch ❌ D:\ValidationSample\HeadValidation\Components\Pages\Plain.razor(1,24): error RZ1017: Unexpected literal following the 'page' directive. Expected 'line break'.
+dotnet watch ❌ D:\ValidationSample\HeadValidation\Components\Pages\Plain.razor(1,25): error RZ2005: The 'inject' directive must appear at the start of the line.
+dotnet watch 🔥 C# and Razor changes applied in 69ms.
+dotnet watch ⌚ File added: .\artifacts\head-validation-static-20260824\hotreload.txt
+dotnet watch ⌚ Loading projects ...
+dotnet watch ⌚ Loaded 1 project(s) in 1.0s.
+dotnet watch ⌚ No managed code changes to apply.
+dotnet watch ⌚ File updated: .\artifacts\head-validation-static-20260824\hotreload.txt
+dotnet watch ⌚ No managed code changes to apply.
+dotnet watch ⌚ File updated: .\artifacts\head-validation-static-20260824\hotreload.txt
+dotnet watch ⌚ No managed code changes to apply.
+dotnet watch ⌚ File updated: .\artifacts\head-validation-static-20260824\hotreload.txt
+dotnet watch ⌚ No managed code changes to apply.
+dotnet watch ⌚ File updated: .\artifacts\head-validation-static-20260824\hotreload.txt
+dotnet watch ⌚ No managed code changes to apply.
+dotnet watch ⌚ File updated: .\artifacts\head-validation-static-20260824\hotreload.txt
+dotnet watch ⌚ No managed code changes to apply.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+dotnet watch 🛑 Shutdown requested. Press Ctrl+C again to force exit.
+dotnet watch ⌚ [HeadValidation (net11.0)] Exited

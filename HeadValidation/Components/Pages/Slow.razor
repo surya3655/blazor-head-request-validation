@@ -1,0 +1,28 @@
+@page "/slow"
+@attribute [StreamRendering]
+@inject HitCounter Counter
+
+<PageTitle>Delayed sales report</PageTitle>
+
+<p class="eyebrow">Streaming report</p>
+<h1>Regional sales report</h1>
+
+@if (_reportReady)
+{
+    <p>Fresh regional totals are available.</p>
+}
+else
+{
+    <p>Compiling the latest sales data...</p>
+}
+
+@code {
+    private bool _reportReady;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Counter.Increment();
+        await Task.Delay(TimeSpan.FromSeconds(2));
+        _reportReady = true;
+    }
+}

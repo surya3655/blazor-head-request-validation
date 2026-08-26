@@ -1,0 +1,28 @@
+﻿@page "/"
+@inject IConfiguration Configuration
+
+<PageTitle>Endpoint Pulse</PageTitle>
+
+<p class="eyebrow">ASP.NET Core validation sample</p>
+<h1>Razor endpoint health lab</h1>
+
+<p class="lede">A small operations portal whose pages exercise HTTP HEAD behavior through real Razor component endpoints.</p>
+
+<dl class="status-grid">
+	<div>
+		<dt>Render mode</dt>
+		<dd>@CurrentRenderMode</dd>
+	</div>
+	<div>
+		<dt>Target</dt>
+		<dd>.NET 11 Preview 7</dd>
+	</div>
+	<div>
+		<dt>Render hits</dt>
+		<dd><a href="/hits">View raw count</a></dd>
+	</div>
+</dl>
+
+@code {
+	private string CurrentRenderMode => Configuration["RenderMode"] ?? "StaticSsr";
+}

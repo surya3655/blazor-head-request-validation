@@ -1,0 +1,6 @@
+HTTP/1.1 302 Found
+Content-Length: 0
+Date: Mon, 24 Aug 2026 12:02:37 GMT
+Server: Kestrel
+Location: http://localhost:5180/login?ReturnUrl=%2Fsecure
+

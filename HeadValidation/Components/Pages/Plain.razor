@@ -1,0 +1,24 @@
+@page "/plain"
+@inject HitCounter Counter
+@inject IConfiguration Configuration
+
+<PageTitle>Service overview</PageTitle>
+
+<h1>Service overview</h1>
+
+<section class="render-proof" aria-labelledby="render-proof-title">
+    <p class="eyebrow">Render mode proof</p>
+    <h2 id="render-proof-title">@ConfiguredRenderMode</h2>
+    <p>Button events handled: <strong aria-live="polite">@_clickCount</strong></p>
+    <button type="button" class="btn btn-primary" @onclick="HandleClick">Increment</button>
+</section>
+
+@code {
+    private int _clickCount;
+
+    private string ConfiguredRenderMode => Configuration["RenderMode"] ?? "StaticSsr";
+
+    protected override void OnInitialized() => Counter.Increment();
+
+    private void HandleClick() => _clickCount++;
+}

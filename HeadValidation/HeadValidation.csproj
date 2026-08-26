@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+    <EnableStaticWebAssets>true</EnableStaticWebAssets>
+    <GenerateStaticWebAssets>true</GenerateStaticWebAssets>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+  </PropertyGroup>
+
+  <!-- Ensure any _framework static assets that may be present in build outputs
+       are copied into the publish folder. This is a safe no-op when there are
+       no such files (for example during normal SDK-driven publish), but helps
+       container publish workflows that build artifacts in intermediate folders. -->
+  <Target Name="CopyBlazorFrameworkFilesToPublish" AfterTargets="Publish">
+    <PropertyGroup>
+      <_PublishWwwRoot>$(PublishDir)wwwroot\_framework</_PublishWwwRoot>
+    </PropertyGroup>
+    <MakeDir Directories="$(_PublishWwwRoot)" Condition="!Exists('$(_PublishWwwRoot)')" />
+
+    <!-- Candidate locations where _framework might appear during local build/publish -->
+    <ItemGroup>
+      <_CandidateFrameworkFiles Include="$(ProjectDir)wwwroot\_framework\**\*" />
+      <_CandidateFrameworkFiles Include="$(OutputPath)wwwroot\_framework\**\*" />
+      <_CandidateFrameworkFiles Include="$(MSBuildProjectDirectory)\bin\**\wwwroot\_framework\**\*" />
+    </ItemGroup>
+
+    <Message Importance="Low" Text="Found %(_CandidateFrameworkFiles.Identity) candidate framework files." Condition="@(_CandidateFrameworkFiles) != ''" />
+
+    <Copy SourceFiles="@(_CandidateFrameworkFiles)" DestinationFiles="@(_CandidateFrameworkFiles->'$(_PublishWwwRoot)\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" Retries="2" Condition="@(_CandidateFrameworkFiles) != ''" />
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.24.1-preview.1" />
+  </ItemGroup>
+
+</Project>

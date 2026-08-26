@@ -1,0 +1,13 @@
+@page "/secure"
+@attribute [Authorize]
+@inject HitCounter Counter
+
+<PageTitle>Operations dashboard</PageTitle>
+
+<p class="eyebrow">Restricted operations</p>
+<h1>Operations dashboard</h1>
+<p>Only authenticated operators can view this page.</p>
+
+@code {
+    protected override void OnInitialized() => Counter.Increment();
+}

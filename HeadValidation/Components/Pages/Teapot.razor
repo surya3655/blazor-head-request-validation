@@ -1,0 +1,28 @@
+@page "/teapot"
+@inject HitCounter Counter
+@inject IHttpContextAccessor HttpContextAccessor
+
+<PageTitle>Maintenance response</PageTitle>
+
+<p class="eyebrow">Custom application response</p>
+<h1>Maintenance brew window</h1>
+<p>This page intentionally returns status 418 and the application header <code>X-Test: hello</code>.</p>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Counter.Increment();
+
+        var response = HttpContextAccessor.HttpContext?.Response;
+        if (response is not null && !response.HasStarted)
+        {
+            response.OnStarting(static state =>
+            {
+                var pendingResponse = (HttpResponse)state;
+                pendingResponse.StatusCode = StatusCodes.Status418ImATeapot;
+                pendingResponse.Headers["X-Test"] = "hello";
+                return Task.CompletedTask;
+            }, response);
+        }
+    }
+}

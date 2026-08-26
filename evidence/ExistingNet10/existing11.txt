@@ -1,0 +1,26 @@
+PS D:\ValidationSample\BlazorDomSyncRepro - Copy> curl.exe -I http://localhost:5048/counter
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Wed, 26 Aug 2026 04:43:52 GMT
+Server: Kestrel
+Cache-Control: no-cache, no-store
+Pragma: no-cache
+Set-Cookie: .AspNetCore.Antiforgery.zWfGZQL8AKM=CfDJ8K5DEq0YMVxPrHGeRA7VbqqDmPJvhBpB-2ED5SHZI5gJD-iAcIxr0NyXf7pfM_I9mSfy7tgqkxftv2xWn8rRloWC_pApfvOSSI8qOs7MTtenZ043DbgKTAZGDd10HsLKxiQhAMARHpFEFygXQTbc5ak; path=/; samesite=strict; httponly
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+X-Frame-Options: SAMEORIGIN
+
+PS D:\ValidationSample\BlazorDomSyncRepro - Copy> curl.exe -s -o NUL -D - http://localhost:5048/counter
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Wed, 26 Aug 2026 04:44:14 GMT
+Server: Kestrel
+Cache-Control: no-cache, no-store
+Pragma: no-cache
+Set-Cookie: .AspNetCore.Antiforgery.zWfGZQL8AKM=CfDJ8K5DEq0YMVxPrHGeRA7Vbqrc20eQtEsORkugz-q2xU-r38rHQ8PCx09X884MSqNCK-6T0YmF3CKuN4F89jzLm3Tgi4MqTuMo6B7PU6zOcr0av3WfAFppWfOsg-vd22fNIxgR019A15XyKaSb1CrUQlA; path=/; samesite=strict; httponly
+Transfer-Encoding: chunked
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+X-Frame-Options: SAMEORIGIN
+
+PS D:\ValidationSample\BlazorDomSyncRepro - Copy> 

@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+Content-Length: 1148
+Content-Type: image/png
+Date: Mon, 24 Aug 2026 12:12:44 GMT
+Server: Kestrel
+Accept-Ranges: bytes
+Cache-Control: no-cache
+ETag: "4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+Last-Modified: Thu, 20 Aug 2026 08:53:48 GMT
+
