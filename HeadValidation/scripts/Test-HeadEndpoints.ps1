@@ -3,7 +3,8 @@ param(
     [string] $BaseUrl = "http://localhost:5180",
     [string] $EvidenceDirectory = "./artifacts/head-validation",
     [ValidateSet("StaticSsr", "InteractiveServer")]
-    [string] $ExpectedRenderMode
+    [string] $ExpectedRenderMode,
+    [double] $SlowMinimumHeadSeconds = 1.5
 )
 
 $ErrorActionPreference = "Stop"
@@ -32,6 +33,8 @@ function Invoke-RawHead {
     $client = [Net.Sockets.TcpClient]::new()
     $client.ReceiveTimeout = 15000
     $client.SendTimeout = 15000
+    $stopwatch = [Diagnostics.Stopwatch]::StartNew()
+    $headerElapsedSeconds = $null
 
     try {
         $client.Connect($baseUri.Host, $port)
@@ -51,8 +54,15 @@ function Invoke-RawHead {
             $bytesRead = $stream.Read($buffer, 0, $buffer.Length)
             if ($bytesRead -gt 0) {
                 $response.Write($buffer, 0, $bytesRead)
+                if ($null -eq $headerElapsedSeconds) {
+                    $receivedText = [Text.Encoding]::GetEncoding(28591).GetString($response.GetBuffer(), 0, [int]$response.Length)
+                    if ($receivedText.Contains("`r`n`r`n")) {
+                        $headerElapsedSeconds = $stopwatch.Elapsed.TotalSeconds
+                    }
+                }
             }
         } while ($bytesRead -gt 0)
+        $stopwatch.Stop()
 
         $responseBytes = $response.ToArray()
         [IO.File]::WriteAllBytes([IO.Path]::Combine($evidencePath, "$Name.head.raw.bin"), $responseBytes)
@@ -67,6 +77,10 @@ function Invoke-RawHead {
         $bodyLength = $responseBytes.Length - $bodyOffset
         Write-Artifact "$Name.head.headers.txt" $headerText
         Write-Artifact "$Name.head.body-size.txt" "bytes=$bodyLength`n"
+        $rawTiming = "header_time={0}`nconnection_time={1}`n" -f `
+            $headerElapsedSeconds.ToString('0.000000', [Globalization.CultureInfo]::InvariantCulture), `
+            $stopwatch.Elapsed.TotalSeconds.ToString('0.000000', [Globalization.CultureInfo]::InvariantCulture)
+        Write-Artifact "$Name.head.raw.timed.txt" $rawTiming
 
         $statusLine = $headerText.Split("`r`n")[0]
         if ($statusLine -notmatch '^HTTP/\d(?:\.\d)?\s+(\d{3})') {
@@ -77,6 +91,8 @@ function Invoke-RawHead {
             Status = [int]$Matches[1]
             Headers = $headerText
             BodyLength = $bodyLength
+            HeaderElapsedSeconds = $headerElapsedSeconds
+            ConnectionElapsedSeconds = $stopwatch.Elapsed.TotalSeconds
         }
     }
     finally {
@@ -120,6 +136,26 @@ function Get-HeaderValue {
     if ($match.Success) { $match.Groups[1].Value } else { "<absent>" }
 }
 
+function Get-TimingValue {
+    param([string] $Timing, [string] $Name)
+
+    $match = [regex]::Match($Timing, "(?m)^$([regex]::Escape($Name))=([0-9.]+)$")
+    if (-not $match.Success) {
+        throw "Could not parse '$Name' from timing output."
+    }
+
+    [double]::Parse($match.Groups[1].Value, [Globalization.CultureInfo]::InvariantCulture)
+}
+
+function Get-HitCount {
+    $value = & curl.exe --silent --show-error --max-time 15 "$($baseUri.AbsoluteUri.TrimEnd('/'))/hits"
+    if ($LASTEXITCODE -ne 0 -or $value -notmatch '^\d+$') {
+        throw "Could not read the /hits counter."
+    }
+
+    [long]$value
+}
+
 $routes = @(
     [pscustomobject]@{ Name = "home"; Path = "/"; ExpectedStatus = 200; AssertHeadParity = $true },
     [pscustomobject]@{ Name = "plain"; Path = "/plain"; ExpectedStatus = 200; AssertHeadParity = $true },
@@ -140,6 +176,17 @@ $bodyRows = [Collections.Generic.List[string]]::new()
 $headerRows = [Collections.Generic.List[string]]::new()
 $selectedHeaders = @("Content-Type", "Content-Length", "Location", "X-Test", "ETag", "Last-Modified", "Cache-Control")
 
+$hitsBefore = Get-HitCount
+$hitCheck = Invoke-RawHead "/plain" "plain-hit-check"
+$hitsAfter = Get-HitCount
+Write-Artifact "hits.txt" "before=$hitsBefore`nafter=$hitsAfter`ndelta=$($hitsAfter - $hitsBefore)`n"
+if ($hitCheck.BodyLength -ne 0) {
+    $failures.Add("HEAD /plain hit check: expected an empty body, got $($hitCheck.BodyLength) bytes")
+}
+if ($hitsAfter -ne ($hitsBefore + 1)) {
+    $failures.Add("HEAD /plain hit check: expected /hits to increase by 1, before=$hitsBefore after=$hitsAfter")
+}
+
 foreach ($route in $routes) {
     Write-Host "Testing $($route.Path)"
     $get = Invoke-Get $route.Path $route.Name
@@ -151,6 +198,23 @@ foreach ($route in $routes) {
         throw "HEAD $($route.Path) timing request failed with curl exit code $LASTEXITCODE."
     }
     Write-Artifact "$($route.Name).head.timed.txt" (($headTiming -join "`n") + "`n")
+
+    if ($route.Name -eq "slow") {
+        $getSeconds = Get-TimingValue $get.Timing "time"
+        $headSeconds = Get-TimingValue ($headTiming -join "`n") "time"
+        $timingPass = $headSeconds -ge $SlowMinimumHeadSeconds
+        Write-Artifact "slow-timing-assertion.txt" @"
+minimum_head_seconds=$($SlowMinimumHeadSeconds.ToString('0.000000', [Globalization.CultureInfo]::InvariantCulture))
+get_time=$($getSeconds.ToString('0.000000', [Globalization.CultureInfo]::InvariantCulture))
+head_header_time=$($headSeconds.ToString('0.000000', [Globalization.CultureInfo]::InvariantCulture))
+raw_header_time=$($head.HeaderElapsedSeconds.ToString('0.000000', [Globalization.CultureInfo]::InvariantCulture))
+raw_connection_time=$($head.ConnectionElapsedSeconds.ToString('0.000000', [Globalization.CultureInfo]::InvariantCulture))
+result=$(if ($timingPass) { 'PASS' } else { 'FAIL' })
+"@
+        if (-not $timingPass) {
+            $failures.Add("HEAD /slow timing: expected curl HEAD completion >= $SlowMinimumHeadSeconds seconds, got $headSeconds seconds")
+        }
+    }
 
     $headCriterion = if ($route.AssertHeadParity) { "parity-required" } else { "control-only" }
     $statusRows.Add("$($route.Path)`tGET=$($get.Status)`tHEAD=$($head.Status)`texpected-GET=$($route.ExpectedStatus)`t$headCriterion")
