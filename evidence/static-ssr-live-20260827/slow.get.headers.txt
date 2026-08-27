@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Date: Thu, 27 Aug 2026 03:19:07 GMT
+Server: Kestrel
+Content-Encoding: identity
+Transfer-Encoding: chunked
+Content-Security-Policy: frame-ancestors 'self'
+blazor-enhanced-nav: allow
+

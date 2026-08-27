@@ -1,3 +1,0 @@
-status=200
-time=2.023286
-size_download=8745

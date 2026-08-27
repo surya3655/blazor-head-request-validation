@@ -1,0 +1,8 @@
+capturedUtc=2026-08-27T03:19:17.3390069Z
+baseUrl=http://localhost:5183
+expectedRenderMode=StaticSsr
+observedRenderMode=StaticSsr
+gitBranch=main
+gitSha=f78bf7020d4fa93a2111ece6db6c8c6a21d7f9e5
+gitDirty=true
+command=D:\ValidationSample\blazor-head-request-validation\HeadValidation\scripts\Test-HeadEndpoints.ps1

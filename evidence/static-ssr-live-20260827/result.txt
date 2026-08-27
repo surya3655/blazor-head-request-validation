@@ -1,0 +1,2 @@
+exitCode=1
+HEAD /slow timing: expected curl HEAD completion >= 1.5 seconds, got 0.004667 seconds

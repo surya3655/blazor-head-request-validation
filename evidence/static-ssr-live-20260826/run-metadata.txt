@@ -1,8 +1,0 @@
-capturedUtc=2026-08-26T11:21:53.2562378Z
-baseUrl=http://localhost:5183
-expectedRenderMode=StaticSsr
-observedRenderMode=StaticSsr
-gitBranch=main
-gitSha=9489693d9d95f6eb51a105137f327895d0fad48a
-gitDirty=true
-command=$evidence='D:\ValidationSample\blazor-head-request-validation\evidence\static-ssr-live-20260826'; Write-Output 'FILES'; Get-ChildItem $evidence -File | Sort-Object Name | Select-Object Name,Length; Write-Output 'RERUN'; Set-Location 'D:\ValidationSample\blazor-head-request-validation\HeadValidation'; try { & '.\scripts\Test-HeadEndpoints.ps1' -BaseUrl 'http://localhost:5183' -ExpectedRenderMode 'StaticSsr' -EvidenceDirectory $evidence; Write-Output "EXIT=$LASTEXITCODE" } catch { Write-Output "ERROR=$($_.Exception.Message)"; Write-Output $_.ScriptStackTrace; exit 99 }
