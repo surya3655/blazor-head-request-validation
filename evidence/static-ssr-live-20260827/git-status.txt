@@ -1,4 +1,0 @@
- M HeadValidation/scripts/Test-HeadEndpoints.ps1
- M evidence/TEST-REPORT.md
-?? .gitignore
-?? evidence/static-ssr-live-20260827/
