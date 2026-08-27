@@ -1,7 +1,7 @@
 # HTTP HEAD validation report
 
 - **Issue:** [dotnet/aspnetcore#68515](https://github.com/dotnet/aspnetcore/issues/68515)
-- **Test date:** 2026-08-26
+- **Test date:** 2026-08-26; harness assertion update verified 2026-08-27
 - **Base commit:** `9489693d9d95f6eb51a105137f327895d0fad48a` (`main`)
 - **Build:** .NET SDK `11.0.100-preview.7.26381.103`; ASP.NET Core runtime `11.0.0-preview.7.26381.103`
 - **Protocol scope:** cleartext HTTP/1.1 on Windows x64; HTTPS and HTTP/2 were not tested
@@ -11,17 +11,36 @@
 The verified local and container Static SSR and Interactive Server runs pass the
 established Razor component requirements: expected status, HEAD/GET status
 parity, and an empty HEAD body. The synchronous `/teapot` status and `X-Test`
-header also pass. The `/slow` streaming-completion timing check fails in all four
-configurations because HEAD returns before the two-second component operation
-that GET completes.
+header also pass. The `/slow` curl HEAD timing criterion fails because complete
+headers become available in milliseconds rather than after the two-second
+component delay. A raw HTTP/1.1 client remains connected for approximately two
+seconds, so this evidence does not show that server-side component execution
+ends early.
 
 The former container columns and unqualified .NET 10 upgrade PASS are not
 carried forward. Fresh container runs now include explicit running-container
 environment inspection and rendered mode proof. The .NET 10 to .NET 11 behavior
-is validated for the tested `/counter` route using the supplied external-project
-evidence. The `/slow` timing difference is retained as a failure. Hot Reload is
+is **not reproducible from committed source**: the supplied external-project
+evidence covers only `/counter`, not the requested `/plain` and `/secure`
+routes.
+
+> **.NET 10 discrepancy:** The issue expected `HEAD` to return **405 Method Not
+> Allowed**, but the actual .NET 10 test returned **404 Not Found**. Therefore,
+> the observed result does not reproduce the expected .NET 10 behavior, and no
+> .NET 10-to-11 upgrade verdict is claimed.
+
+The `/slow` curl timing difference remains an automated failure. Hot Reload is
 verified for file additions and valid Razor route updates in both local render
 modes.
+
+The updated harness was also run against the live Static SSR container. It
+asserted that HEAD `/plain` executed the component by observing `/hits` increase
+by exactly one, recorded `/slow` GET at about 2.01s, curl HEAD completion at
+about 0.01s, raw header arrival in milliseconds, and raw connection close at
+about two seconds. The timing assertion failed and the aggregate result was
+`exitCode=1`: [hits](static-ssr-live-20260827/hits.txt), [timing assertion](static-ssr-live-20260827/slow-timing-assertion.txt),
+[raw timing](static-ssr-live-20260827/slow.head.raw.timed.txt), and
+[result](static-ssr-live-20260827/result.txt).
 
 ## Verified configurations
 
@@ -62,7 +81,7 @@ configurations:
 | `/plain` | 200 | 200 | PASS |
 | `/item/42` | 200 | 200 | PASS |
 | `/slow` status/header parity | 200 | 200 | PASS |
-| `/slow` streaming completion timing | ~2 seconds | milliseconds | **FAIL: HEAD returns before the component operation completes** |
+| `/slow` curl completion timing | ~2 seconds | milliseconds | **FAIL: complete HEAD headers are available before the required minimum** |
 | `/slow-teapot` | 200 | 200 | PASS for status parity; delayed metadata is an observation |
 | `/secure` | 302 | 302 | PASS |
 | `/teapot` | 418 | 418 | PASS; `X-Test: hello` preserved |
@@ -90,14 +109,20 @@ HTTP/1.1 responses, not inferred from `curl -I`.
 ## Streaming observations
 
 [Slow.razor](https://github.com/surya3655/blazor-head-request-validation/tree/main/HeadValidation/Components/Pages/Slow.razor) performs one
-two-second delay. A single static GET took about two seconds, while HEAD headers
-arrived in milliseconds: [GET timing](https://github.com/surya3655/blazor-head-request-validation/tree/main/evidence/local-static-verified-20260826/slow.get.timed.txt)
-and [HEAD timing](https://github.com/surya3655/blazor-head-request-validation/tree/main/evidence/local-static-verified-20260826/slow.head.timed.txt). HTTP status
-remained 200 for both, so status parity passes. The streaming-completion timing
-check nevertheless **FAILS** because HEAD returns before the component's
-two-second asynchronous operation completes. The same timing failure occurs in
-Local Static SSR, Local Interactive Server, Container Static SSR, and Container
-Interactive Server.
+two-second delay. In the updated Static SSR run, GET took about two seconds and
+complete HEAD headers arrived in milliseconds. The raw HEAD connection did not
+close until about two seconds had elapsed. HTTP status remained 200 for both,
+so status parity passes. The automated curl timing criterion nevertheless
+**FAILS** because header completion is below the configured 1.5-second minimum.
+This proves early header availability, but does not prove that component
+execution ends early. Earlier runs show the same curl timing difference in all
+four configurations; raw connection-close timing has only been captured in the
+updated Static SSR run.
+
+The harness also brackets a raw HEAD `/plain` request with two GET `/hits`
+requests and requires the counter to increase by exactly one. This independently
+checks that the HEAD request executes the component; failure contributes to the
+aggregate nonzero exit code.
 
 [SlowTeapot.razor](https://github.com/surya3655/blazor-head-request-validation/tree/main/HeadValidation/Components/Pages/SlowTeapot.razor) attempts
 to apply status 418 and `X-Test: delayed` after streaming has begun. The delayed
